@@ -11,10 +11,14 @@ import java.util.ArrayList;
  * @author pazzagli.angelica
  */
 public class Mazzo {
-    private ArrayList<Carta> mazzo;
+    protected ArrayList<Carta> mazzo;
     
     public Mazzo() {
         mazzo = new ArrayList();
+    }
+    
+    public int getLunghezza() {
+        return mazzo.size();
     }
     
     public void addCarta(Carta c) {
@@ -30,7 +34,8 @@ public class Mazzo {
     }
     
     public Carta getPrima() {
-        return mazzo.get(0);
+            return mazzo.get(0);
+        
     }
     
     public int calcolaPunti() {
@@ -39,11 +44,5 @@ public class Mazzo {
             punteggio += c.getPunti();
         }
         return punteggio;
-    }
-    
-    public void stampaMazzo(Mazzo mazzo) {
-        /**for(Carta c : mazzo) {
-            System.out.println(c.getColore());
-        }*/
     }
 }

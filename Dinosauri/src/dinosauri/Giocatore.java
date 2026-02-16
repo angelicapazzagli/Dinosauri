@@ -9,15 +9,27 @@ package dinosauri;
  * @author pazzagli.angelica
  */
 public class Giocatore {
-    private Mazzo mazzo;
-    private Mazzo mazzoPunti;
+    protected Mazzo mazzo;
+    protected Mazzo mazzoPunti;
     
     public Giocatore() {
         mazzo = new Mazzo();
         mazzoPunti = new Mazzo();
     }
     
-    public void addCarta(Carta c) {
-        mazzo.addCarta(c);
+    public void addCarta(Carta c, Mazzo m) {
+        m.addCarta(c);
+    }
+    
+    public Carta tiraCarta() {
+            Carta c = mazzo.getPrima();
+            System.out.println(c.getColore());
+            mazzo.removeCarta(c);
+            return c;
+        
+    }
+    
+    public int calcolaPunti() {
+        return this.mazzoPunti.calcolaPunti();
     }
 }

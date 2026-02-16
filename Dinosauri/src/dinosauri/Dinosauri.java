@@ -4,6 +4,8 @@
  */
 package dinosauri;
 
+import java.io.IOException;
+
 /**
  *
  * @author pazzagli.angelica
@@ -12,9 +14,14 @@ public class Dinosauri {
 
     /**
      * @param args the command line arguments
+     * @throws java.io.IOException
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws IOException {
+        Gestore g = new Gestore("mazzo.txt");
+        
+        g.readFile();
+        g.distribuisci();
+        g.svolgiPartita();
     }
     
 }
